@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mateus Andrade · Full Stack e AI Engineer</title>
+  <meta name="description" content="Portfólio de Mateus Andrade, desenvolvedor Full Stack e AI Engineer. TypeScript, Node.js, React e IA aplicada a atendimento.">
+  <meta name="author" content="Mateus Andrade">
+  <meta property="og:title" content="Mateus Andrade · Full Stack e AI Engineer">
+  <meta property="og:description" content="TypeScript de ponta a ponta e plataformas de atendimento com IA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mateusands.github.io/">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7">
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" data-i18n-label="navHome" aria-label="Início">
+        <span class="logo-mark">MA</span>
+        <span class="logo-text">mateusands</span>
+      </a>
+
+      <nav data-i18n-label="navMain" aria-label="Principal">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#sobre" data-i18n="navAbout">Sobre</a></li>
+          <li><a href="#experiencia" data-i18n="navExp">Experiência</a></li>
+          <li><a href="#sync-ai">Sync AI</a></li>
+          <li><a href="#projetos" data-i18n="navProjects">Projetos</a></li>
+          <li><a href="#habilidades" data-i18n="navSkills">Habilidades</a></li>
+          <li><a href="#contato" data-i18n="navContact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang" role="group" data-i18n-label="langGroup" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR" aria-label="Português">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es" aria-label="Español">ES</button>
+        </div>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="status reveal"><span class="dot" aria-hidden="true"></span><span data-i18n="status">Paraíba, Brasil · Desenvolvedor Full Stack</span></p>
+          <h1 class="reveal">
+            <span class="hello" data-i18n="hello">Olá, eu sou</span>
+            Mateus Andrade
+          </h1>
+          <p class="role reveal">
+            <span class="sr-only" data-i18n="roleStatic">Desenvolvedor Full Stack e AI Engineer</span>
+            <span aria-hidden="true"><span class="mono">&gt;</span> <span id="typed">Desenvolvedor Full Stack</span><span class="caret"></span></span>
+          </p>
+          <p class="lead reveal" data-i18n="lead">
+            Trabalho com TypeScript de ponta a ponta, do React ao Node.js e PostgreSQL. Hoje construo plataformas de
+            atendimento com IA, da fila que recebe a mensagem até a resposta que o cliente lê.
+          </p>
+          <div class="cta reveal">
+            <a class="btn btn-primary" href="#projetos" data-i18n="ctaProjects">Ver projetos</a>
+            <a class="btn btn-ghost" href="#contato" data-i18n="ctaContact">Entrar em contato</a>
+          </div>
+          <ul class="socials reveal" data-i18n-label="socials" aria-label="Redes">
+            <li><a href="https://github.com/mateusands" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </a></li>
+            <li><a href="https://www.linkedin.com/in/mateusands" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a></li>
+            <li><a href="https://wa.me/5583991773502" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            </a></li>
+            <li><a href="mailto:agentmateusandrade@gmail.com" data-i18n-label="email" aria-label="E-mail">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            </a></li>
+          </ul>
+        </div>
+
+        <figure class="terminal reveal">
+          <figcaption class="sr-only" data-i18n="termCaption">Resumo da stack e do foco, em formato de terminal</figcaption>
+          <div class="term-bar" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <p class="mono">~/mateus</p>
+          </div>
+          <pre class="term-body mono"><span class="t-dim">$</span> whoami
+mateus andrade
+
+<span class="t-dim">$</span> cat stack.txt
+typescript · node.js · react
+postgresql + pgvector · redis
+bullmq · openai · docker
+
+<span class="t-dim">$</span> cat <span data-i18n="termFile">foco</span>.txt
+<span data-i18n="termFocus">rag · grounding · fallback
+orquestração de mensagens
+saas multi-tenant</span>
+
+<span class="t-dim">$</span> <span class="caret caret-block" aria-hidden="true"></span></pre>
+        </figure>
+      </div>
+
+      <div class="container">
+        <ul class="stats reveal">
+          <li>
+            <a class="stat stat-link" href="#sync-ai">
+              <strong>&lt; 4 s</strong>
+              <span data-i18n="stat1">tempo de resposta do Sync AI</span>
+              <span class="stat-more"><span data-i18n="stat1More">Como funciona</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </li>
+          <li class="stat"><strong>24 h</strong><span data-i18n="stat2">atendimento no ar, com fallback entre modelos</span></li>
+          <li class="stat"><strong>4</strong><span data-i18n="stat3">plataformas que gerenciei de ponta a ponta</span></li>
+          <li class="stat"><strong id="project-count">13</strong><span data-i18n="stat4">projetos pessoais no GitHub</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow mono" data-i18n="aboutEyebrow">01 · sobre</p>
+          <h2 data-i18n="aboutTitle">Da operação ao código</h2>
+        </header>
+
+        <div class="about">
+          <div class="about-text reveal">
+            <p data-i18n="about1">
+              Comecei na área de operações, e foi lá que escrevi minhas primeiras ferramentas: um sistema de
+              acompanhamento de demandas usado por todos os turnos e automações em JavaScript para os fluxos de
+              atendimento. Isso me levou ao desenvolvimento.
+            </p>
+            <p data-i18n="about2">
+              Como Desenvolvedor Full Stack, gerenciei a engenharia de ponta a ponta de quatro plataformas. A principal
+              foi uma plataforma de atendimento com IA multi-tenant e multimarca. Sou cofundador da <a class="inline-link" href="https://sync-cx.top/" target="_blank" rel="noopener">Sync CX</a>, onde
+              construímos o Sync AI, nossa IA de atendimento.
+            </p>
+            <p data-i18n="about3">
+              No dia a dia, faço orquestração de webhooks com filas em BullMQ e integro LLMs ao atendimento, com
+              pipelines de RAG sobre pgvector, memória persistente e verificação de grounding. Escrevo a especificação
+              e o teste antes do código (Spec-Driven Development, BDD e TDD).
+            </p>
+          </div>
+
+          <aside class="about-cards">
+            <article class="card reveal">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+              <h3 data-i18n="eduTitle">Formação</h3>
+              <p data-i18n="eduCourse">Bacharelado em Ciência da Computação, UNINTER</p>
+              <p class="muted mono" data-i18n="eduDates">2025 – 2029 · em andamento</p>
+            </article>
+            <article class="card reveal">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <h3 data-i18n="certTitle">Certificações</h3>
+              <ul class="plain">
+                <li data-i18n="cert1">Linux: Redes, Segurança, Shell Script, Docker, Kubernetes e Ansible</li>
+                <li>EF SET English Certificate, C1 Advanced</li>
+              </ul>
+            </article>
+            <article class="card reveal">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+              <h3 data-i18n="langTitle">Idiomas</h3>
+              <p data-i18n="langs">Português nativo · Inglês avançado (C1)</p>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section class="section alt" id="experiencia">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow mono" data-i18n="expEyebrow">02 · experiência</p>
+          <h2 data-i18n="expTitle">Onde tenho trabalhado</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="job reveal">
+            <div class="job-meta"><p class="mono">2026</p></div>
+            <div class="job-body">
+              <h3><span data-i18n="job1Role">Desenvolvedor Full Stack</span> <span class="at">BPX Group</span></h3>
+              <ul data-i18n="job1List">
+                <li>Desenvolvi o orquestrador de mensagens do BPX Connect, com filas em BullMQ e Redis que absorvem picos de volume sem perder mensagens.</li>
+                <li>Implementei o <a class="inline-link" href="#sync-ai">Sync AI</a> no BPX Connect, com RAG sobre pgvector, memória persistente, verificação de grounding e fallback para um modelo reserva.</li>
+                <li>Construí a classificação de tópicos sensíveis de Jogo Responsável, com regras e classificação semântica por LLM, que passa a conversa para um atendente humano quando identifica sinais de risco.</li>
+                <li>Fiz o pipeline de ingestão da base de conhecimento (embeddings, deduplicação e sincronização diária) e o Flow Builder visual que a operação usa para editar os fluxos.</li>
+                <li>Criei o webchat multimarca: um único código gera o widget de cada marca, com roteamento por marca no TaskRouter.</li>
+                <li>Desenvolvi o BPX Safe, com trilha de auditoria completa, que substituiu um controle em planilha, e o VIBEBPX, rede social corporativa com feed, chat e reconhecimento entre colegas por pontos.</li>
+              </ul>
+              <ul class="tags" data-i18n-label="techs" aria-label="Tecnologias">
+                <li>TypeScript</li><li>React</li><li>Node.js</li><li>PostgreSQL + pgvector</li><li>Redis</li><li>BullMQ</li><li>OpenAI</li><li>WebSockets</li><li>Docker</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <div class="job-meta"><p class="mono" data-i18n="job2Date">03/2026 – hoje</p></div>
+            <div class="job-body">
+              <h3><span data-i18n="job2Role">Cofundador</span> <span class="at"><a class="at-link" href="https://sync-cx.top/" target="_blank" rel="noopener">Sync CX</a></span></h3>
+              <ul data-i18n="job2List">
+                <li>Implementei bots e automações em Zendesk, Intercom e Chatwoot, com fluxos em n8n e integrações de IA.</li>
+                <li>Desenvolvi soluções de RAG para respostas ancoradas em base de conhecimento e participo do desenvolvimento do Sync AI.</li>
+                <li>Configurei e mantenho a infraestrutura em Linux com Docker, CI/CD e observabilidade com Prometheus e Grafana.</li>
+              </ul>
+              <ul class="tags" data-i18n-label="techs" aria-label="Tecnologias">
+                <li>n8n</li><li>RAG</li><li>Docker</li><li>CI/CD</li><li>Prometheus</li><li>Grafana</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <div class="job-meta"><p class="mono">02/2026 – 06/2026</p></div>
+            <div class="job-body">
+              <h3><span data-i18n="job3Role">Suporte Técnico e Automação de IA</span> <span class="at">LinkLei</span></h3>
+              <ul data-i18n="job3List">
+                <li>Participei do desenvolvimento de um agente de IA para triagem de chamados, que passou a absorver boa parte do volume inicial sem intervenção humana.</li>
+                <li>Participei da migração do Chatwoot para o Intercom e desenhei workflows automatizados que reduziram o tempo médio de resposta.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <div class="job-meta"><p class="mono">2020 – 2025</p></div>
+            <div class="job-body">
+              <h3><span data-i18n="job4Role">Operações e qualidade</span> <span class="at">Ana Gaming · BPX Group · AeC</span></h3>
+              <ul data-i18n="job4List">
+                <li>Escrevi automações em JavaScript para fluxos de atendimento e montei dashboards de KPIs no Power BI.</li>
+                <li>Criei uma ferramenta de acompanhamento de demandas usada por todos os turnos da operação.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SYNC AI -->
+    <section class="section" id="sync-ai">
+      <div class="container">
+        <div class="sync">
+          <div class="sync-intro">
+            <header class="section-head reveal">
+              <p class="eyebrow mono">03 · sync ai</p>
+              <h2 data-i18n="syncTitle">Sync AI, a IA de atendimento</h2>
+            </header>
+            <div class="sync-text reveal">
+              <p data-i18n="sync1">
+                O Sync AI é a IA de atendimento que desenvolvemos na <a class="inline-link" href="https://sync-cx.top/" target="_blank" rel="noopener">Sync CX</a>. Ela responde os clientes a partir da
+                base de conhecimento de cada empresa e passa a conversa para uma pessoa quando é preciso.
+              </p>
+              <p data-i18n="sync2">
+                Implementei o Sync AI numa plataforma de atendimento multimarca, onde ele atendia 24 horas por dia.
+              </p>
+            </div>
+            <dl class="sync-stats reveal">
+              <div><dt>&lt; 4 s</dt><dd data-i18n="syncStat1">por resposta</dd></div>
+              <div><dt>24 h</dt><dd data-i18n="syncStat2">no ar, com modelo reserva</dd></div>
+            </dl>
+            <ul class="tags reveal" data-i18n-label="techs" aria-label="Tecnologias">
+              <li>OpenAI</li><li>pgvector</li><li>Embeddings</li><li>BullMQ</li><li>Redis</li><li>Node.js</li><li>TypeScript</li>
+            </ul>
+          </div>
+
+          <div class="pipeline reveal">
+            <h3 class="pipeline-title mono" data-i18n="pipeTitle">o caminho de uma mensagem</h3>
+            <ol>
+              <li>
+                <span class="step mono" aria-hidden="true">01</span>
+                <div><h4 data-i18n="p1t">Fila</h4>
+                <p data-i18n="p1">A mensagem entra pelo orquestrador, com filas em BullMQ e Redis que absorvem picos de volume sem perder nada.</p></div>
+              </li>
+              <li>
+                <span class="step mono" aria-hidden="true">02</span>
+                <div><h4 data-i18n="p2t">Triagem</h4>
+                <p data-i18n="p2">Regras e classificação semântica com LLM detectam tópicos sensíveis. Se aparece sinal de risco, a conversa vai para um atendente humano.</p></div>
+              </li>
+              <li>
+                <span class="step mono" aria-hidden="true">03</span>
+                <div><h4 data-i18n="p3t">Busca</h4>
+                <p data-i18n="p3">O RAG busca no pgvector os trechos da base de conhecimento que respondem à pergunta. A base é ingerida com embeddings, deduplicação e sincronização diária.</p></div>
+              </li>
+              <li>
+                <span class="step mono" aria-hidden="true">04</span>
+                <div><h4 data-i18n="p4t">Resposta</h4>
+                <p data-i18n="p4">O modelo escreve a resposta com esse contexto e com a memória persistente da conversa.</p></div>
+              </li>
+              <li>
+                <span class="step mono" aria-hidden="true">05</span>
+                <div><h4>Grounding</h4>
+                <p data-i18n="p5">A resposta é conferida contra a base de conhecimento, para a IA não inventar informação.</p></div>
+              </li>
+              <li>
+                <span class="step mono" aria-hidden="true">06</span>
+                <div><h4>Fallback</h4>
+                <p data-i18n="p6">Se o modelo principal falha, um modelo reserva assume e o atendimento continua no ar.</p></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="section alt" id="projetos">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow mono" data-i18n="projEyebrow">04 · projetos</p>
+          <h2 data-i18n="projTitle">Projetos</h2>
+        </header>
+
+        <div class="group-head reveal">
+          <h3 data-i18n="proGroup">Profissionais</h3>
+          <p data-i18n="proNote">Sistemas que desenvolvi em produção. O código e a documentação são privados.</p>
+        </div>
+        <ul class="projects projects-pro" id="pro-projects"></ul>
+
+        <div class="group-head reveal">
+          <h3 data-i18n="personalGroup">Pessoais</h3>
+          <p data-i18n="personalNote">Open source, feitos fora do trabalho. O código de todos está no GitHub.</p>
+        </div>
+        <div class="filters reveal" role="group" data-i18n-label="filterGroup" aria-label="Filtrar projetos">
+          <button type="button" class="chip is-active" data-filter="all" aria-pressed="true" data-i18n="fAll">Todos</button>
+          <button type="button" class="chip" data-filter="web" aria-pressed="false">Web</button>
+          <button type="button" class="chip" data-filter="linux" aria-pressed="false" data-i18n="fLinux">Linux e hardware</button>
+          <button type="button" class="chip" data-filter="desktop" aria-pressed="false" data-i18n="fDesktop">Desktop e CLI</button>
+          <button type="button" class="chip" data-filter="dados" aria-pressed="false" data-i18n="fData">Dados e jogos</button>
+        </div>
+
+        <p class="sr-only" id="filter-status" role="status"></p>
+        <ul class="projects" id="projects"></ul>
+
+        <p class="more reveal">
+          <a class="link-arrow" href="https://github.com/mateusands?tab=repositories" target="_blank" rel="noopener">
+            <span data-i18n="allRepos">Ver todos os repositórios</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="section" id="habilidades">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow mono" data-i18n="skillsEyebrow">05 · habilidades</p>
+          <h2 data-i18n="skillsTitle">Com o que eu trabalho</h2>
+        </header>
+
+        <div class="skills">
+          <article class="skill reveal">
+            <h3 data-i18n="sk1">IA e LLMs</h3>
+            <ul class="tags">
+              <li>OpenAI</li><li>RAG</li><li>Embeddings</li><li>pgvector</li><li>Grounding</li><li data-i18n="skFallback">Fallback entre modelos</li><li data-i18n="skAgents">Agentes de IA</li><li>Prompt engineering</li><li>n8n</li>
+            </ul>
+          </article>
+          <article class="skill reveal">
+            <h3 data-i18n="sk2">Back-end e dados</h3>
+            <ul class="tags">
+              <li>Node.js</li><li>Express</li><li>Rust</li><li>Tauri</li><li>PostgreSQL</li><li>MariaDB</li><li>SQLite</li><li>Redis</li><li>BullMQ</li><li>SQL</li>
+            </ul>
+          </article>
+          <article class="skill reveal">
+            <h3>Front-end</h3>
+            <ul class="tags">
+              <li>React</li><li>TypeScript</li><li>Vite</li><li>Tailwind CSS</li><li>shadcn/ui</li><li>TanStack Query</li>
+            </ul>
+          </article>
+          <article class="skill reveal">
+            <h3 data-i18n="sk4">Arquitetura</h3>
+            <ul class="tags" data-i18n="skArchList">
+              <li>SaaS multi-tenant</li><li>APIs REST</li><li>Webhooks</li><li>WebSockets</li><li>Filas assíncronas</li><li>Orquestração de mensagens</li>
+            </ul>
+          </article>
+          <article class="skill reveal">
+            <h3>Infra</h3>
+            <ul class="tags">
+              <li>Docker</li><li>CI/CD</li><li>Linux</li><li>Cloudflare</li><li>Prometheus</li><li>Grafana</li>
+            </ul>
+          </article>
+          <article class="skill reveal">
+            <h3 data-i18n="sk6">Ferramentas e métodos</h3>
+            <ul class="tags">
+              <li>Git</li><li>GitHub</li><li>VS Code</li><li>Spec-Driven Development</li><li>BDD</li><li>TDD</li><li>Zendesk</li><li>Intercom</li><li>Chatwoot</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section alt" id="contato">
+      <div class="container">
+        <div class="contact reveal">
+          <p class="eyebrow mono" data-i18n="contactEyebrow">06 · contato</p>
+          <h2 data-i18n="contactTitle">Vamos conversar</h2>
+          <p class="section-sub" data-i18n="contactSub">Tem uma vaga ou um projeto em mente? Me chame por e-mail, WhatsApp ou LinkedIn.</p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary btn-lg" href="mailto:agentmateusandrade@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <span data-i18n="sendEmail">Enviar e-mail</span>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="https://wa.me/5583991773502" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label" data-i18n="email">E-mail</span>
+              <span class="contact-value">
+                <a href="mailto:agentmateusandrade@gmail.com">agentmateusandrade@gmail.com</a>
+                <button type="button" class="copy-btn" data-copy="agentmateusandrade@gmail.com" data-i18n-label="copyEmail" aria-label="Copiar e-mail">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </span>
+            </li>
+            <li>
+              <span class="contact-label" data-i18n="phone">Telefone</span>
+              <span class="contact-value">
+                <a href="tel:+5583991773502">+55 (83) 99177-3502</a>
+                <button type="button" class="copy-btn" data-copy="+5583991773502" data-i18n-label="copyPhone" aria-label="Copiar telefone">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </span>
+            </li>
+            <li>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value"><a href="https://www.linkedin.com/in/mateusands" target="_blank" rel="noopener">linkedin.com/in/mateusands</a></span>
+            </li>
+            <li>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value"><a href="https://github.com/mateusands" target="_blank" rel="noopener">github.com/mateusands</a></span>
+            </li>
+          </ul>
+          <p class="sr-only" id="copy-status" role="status"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Mateus Andrade</p>
+      <p class="mono muted" data-i18n="footerMade">HTML, CSS e JavaScript puro · hospedado no GitHub Pages</p>
+      <a href="#home" class="link-arrow"><span data-i18n="backTop">Voltar ao topo</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="i18n.js?v=7"></script>
+  <script src="script.js?v=7"></script>
+</body>
+</html>

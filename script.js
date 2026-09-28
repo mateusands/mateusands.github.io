@@ -26,6 +26,8 @@ const ICONS = {
   gamepad: '<path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><rect x="2" y="6" width="20" height="12" rx="6"/>',
   github: '<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>',
   external: '<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+  package: '<path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12M3.29 7 12 12l8.71-5M7.5 4.27l9 5.15"/>',
+  database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>',
   star: '<path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>'
 };
 
@@ -88,6 +90,36 @@ const PRO_STACK = ['TypeScript', 'React', 'Node.js', 'Express', 'PostgreSQL + pg
 
 // Descrições reescritas a partir do README/descrição de cada repositório.
 const PROJECTS = [
+  {
+    name: 'llm-cache-pg', repo: 'llm-cache-pg', icon: 'database', lang: 'TypeScript',
+    cats: ['web'], featured: true, npm: 'https://www.npmjs.com/package/llm-cache-pg',
+    tags: ['TypeScript', 'PostgreSQL', 'pgvector', 'OpenAI', 'Anthropic', 'Prometheus'],
+    desc: {
+      pt: 'Cache semântico para chamadas de LLM em TypeScript, sobre PostgreSQL com pgvector. A mesma pergunta escrita de outro jeito é respondida pelo cache, sem pagar outra chamada ao modelo. Publicado no npm.',
+      en: 'Semantic cache for LLM calls in TypeScript, on PostgreSQL with pgvector. The same question asked in different words is answered from the cache, without paying for another model call. Published on npm.',
+      es: 'Caché semántica para llamadas a LLM en TypeScript, sobre PostgreSQL con pgvector. La misma pregunta escrita de otra forma se responde desde la caché, sin pagar otra llamada al modelo. Publicado en npm.'
+    },
+    highlights: {
+      pt: [
+        'Busca exata por hash primeiro e semântica por similaridade de vetor depois, em qualquer Postgres com pgvector (RDS, Supabase, Neon), sem extensão própria',
+        'Wrappers de uma linha para os SDKs da OpenAI e da Anthropic, com isolamento por tenant via namespace',
+        'Fail-open: se o banco ou o embedder cair ou demorar, a chamada vai direto para o modelo',
+        'Métricas Prometheus, dashboard Grafana e benchmark com 1000 pares do Quora Question Pairs'
+      ],
+      en: [
+        'Exact hash lookup first, then semantic vector similarity, on any Postgres with pgvector (RDS, Supabase, Neon), with no custom extension',
+        'One-line wrappers for the OpenAI and Anthropic SDKs, with per-tenant isolation through namespaces',
+        'Fail-open: if the database or the embedder is down or slow, the call goes straight to the model',
+        'Prometheus metrics, a Grafana dashboard and a benchmark on 1000 Quora Question Pairs'
+      ],
+      es: [
+        'Búsqueda exacta por hash primero y semántica por similitud de vectores después, en cualquier Postgres con pgvector (RDS, Supabase, Neon), sin extensión propia',
+        'Wrappers de una línea para los SDKs de OpenAI y Anthropic, con aislamiento por tenant mediante namespace',
+        'Fail-open: si la base de datos o el embedder se caen o tardan, la llamada va directo al modelo',
+        'Métricas de Prometheus, dashboard de Grafana y benchmark con 1000 pares de Quora Question Pairs'
+      ]
+    }
+  },
   {
     name: 'Zugzwang', repo: 'Zugzwang', icon: 'chess', lang: 'TypeScript',
     cats: ['web', 'dados'], featured: true, wip: true,
@@ -369,6 +401,9 @@ function renderProjects() {
     const highlights = p.highlights
       ? `<ul class="highlights">${p.highlights[lang].map((h) => `<li>${esc(h)}</li>`).join('')}</ul>`
       : '';
+    const npm = p.npm
+      ? `<a href="${esc(p.npm)}" target="_blank" rel="noopener" aria-label="${esc(t.npmOf(p.name))}">${svg('package')}npm</a>`
+      : '';
     const demo = p.demo
       ? `<a href="${esc(p.demo)}" target="_blank" rel="noopener" aria-label="${esc(t.playOf(p.name))}">${svg('external')}${esc(t.play)}</a>`
       : '';
@@ -386,6 +421,7 @@ function renderProjects() {
         <ul class="tags">${p.tags.map((tag) => `<li>${esc(tag)}</li>`).join('')}</ul>
         <div class="project-links">
           <a href="${url}" target="_blank" rel="noopener" aria-label="${esc(t.codeOf(p.name))}">${svg('github')}${esc(t.code)}</a>
+          ${npm}
           ${demo}
         </div>
       </li>`;
